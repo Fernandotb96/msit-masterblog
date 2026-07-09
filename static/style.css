@@ -105,3 +105,26 @@ h1 {
     color: #4F4F4F;
     text-decoration: underline;
 }
+
+.nav-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Botón estilizado para añadir posts */
+.btn-add {
+    display: inline-block;
+    background-color: #4F4F4F; /* El gris oscuro de tus títulos */
+    color: #FFF;
+    text-decoration: none; /* Quita el subrayado */
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+/* Efecto al pasar el ratón por encima */
+.btn-add:hover {
+    background-color: #333;
+}
