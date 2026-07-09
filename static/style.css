@@ -8,6 +8,7 @@ body {
 h1 {
     text-align: center;
     color: #4F4F4F;
+    margin-bottom: 30px;
 }
 
 .post {
@@ -24,4 +25,83 @@ h1 {
 
 .post p {
     margin: 10px 0;
+}
+
+.form-container {
+    max-width: 550px;
+    margin: 0 auto 30px auto;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #4F4F4F;
+    font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #DDD;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease-in-out;
+}
+
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-color: #4F4F4F;
+    outline: none;
+}
+
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    background-color: #4F4F4F;
+    color: #FFF;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #333333;
+}
+
+.form-container p {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+.form-container a {
+    color: #777;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form-container a:hover {
+    color: #4F4F4F;
+    text-decoration: underline;
 }
