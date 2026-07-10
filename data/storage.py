@@ -30,7 +30,8 @@ def add_post(title, author, content):
         "id": post_id,
         "title": title,
         "author": author,
-        "content": content
+        "content": content,
+        "likes": 0
     }
     posts.append(new_post)
     save_data(posts)
@@ -60,5 +61,15 @@ def update_post(post_id, title, author, content):
             post['title'] = title
             post['author'] = author
             post['content'] = content
+            break
+    save_data(posts)
+
+
+def like_post(post_id):
+    """Search for a post and increment the number of likes."""
+    posts = load_data()
+    for post in posts:
+        if post['id'] == post_id:
+            post['likes'] = post.get('likes', 0) + 1
             break
     save_data(posts)
