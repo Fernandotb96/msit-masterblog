@@ -28,3 +28,30 @@ def add_post(title, author, content):
     }
     posts.append(new_post)
     save_data(posts)
+
+
+def get_post(post_id):
+    """Search for a post by ID and return its data"""
+    posts = load_data()
+    for post in posts:
+        if post['id'] == post_id:
+            return post
+    return None
+
+
+def delete_post(post_id):
+    posts = load_data()
+    final_posts = [post for post in posts if post['id'] != post_id]
+    save_data(final_posts)
+
+
+def update_post(post_id, title, author, content):
+    """Search for a post by ID and update title, author and content"""
+    posts = load_data()
+    for post in posts:
+        if post['id'] == post_id:
+            post['title'] = title
+            post['author'] = author
+            post['content'] = content
+            break
+    save_data(posts)

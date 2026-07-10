@@ -111,12 +111,11 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Botón estilizado para añadir posts */
 .btn-add {
     display: inline-block;
-    background-color: #4F4F4F; /* El gris oscuro de tus títulos */
+    background-color: #4F4F4F;
     color: #FFF;
-    text-decoration: none; /* Quita el subrayado */
+    text-decoration: none;
     padding: 10px 20px;
     font-size: 15px;
     font-weight: bold;
@@ -124,7 +123,40 @@ h1 {
     transition: background-color 0.2s ease;
 }
 
-/* Efecto al pasar el ratón por encima */
 .btn-add:hover {
     background-color: #333;
+}
+
+.post-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-action {
+    display: inline-block;
+    text-decoration: none;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-update {
+    background-color: #4F4F4F;
+    color: #FFF;
+}
+
+.btn-update:hover {
+    background-color: #333;
+}
+
+.btn-delete {
+    background-color: #D9534F;
+    color: #FFF;
+}
+
+.btn-delete:hover {
+    background-color: #C9302C;
 }

@@ -18,6 +18,12 @@
             <h2>{{blog.title}}</h2>
             <p><em>Written by {{blog.author}}</em></p>
             <p>{{blog.content}}</p>
+
+            <div class="post-actions">
+                <a href="{{ url_for('update_post', post_id=blog.id) }}" class="btn-action btn-update">Edit</a>
+                <a href="{{ url_for('delete_post', post_id=blog.id) }}" class="btn-action btn-delete"
+                   onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
+            </div>
         </div>
     {% endfor %}
 
