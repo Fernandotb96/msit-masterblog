@@ -2,18 +2,24 @@ import json
 
 
 def load_data():
-    with open("data/blog_data.json", "r", encoding="utf-8") as handle:
-        data = json.load(handle)
-    return data
+    """Load and return all blog posts from the JSON database file."""
+    try:
+        with open("data/blog_data.json", "r", encoding="utf-8") as handle:
+            return json.load(handle)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
 
 
 def save_data(data):
+    """Save the provided list of blog posts to the JSON database file."""
     with open("data/blog_data.json", "w", encoding="utf-8") as handle:
         json.dump(data, handle)
-    return
 
 
 def add_post(title, author, content):
+    """Create a new blog post and append it to the database.
+    Generate a unique ID for the new post by finding the maximum existing ID
+    and adding 1."""
     posts = load_data()
     if posts:
         post_id = max(post['id'] for post in posts) + 1
@@ -31,7 +37,7 @@ def add_post(title, author, content):
 
 
 def get_post(post_id):
-    """Search for a post by ID and return its data"""
+    """Search for and returns a single blog post by its unique ID."""
     posts = load_data()
     for post in posts:
         if post['id'] == post_id:
@@ -40,13 +46,14 @@ def get_post(post_id):
 
 
 def delete_post(post_id):
+    """Remove a blog post from the database by its unique ID."""
     posts = load_data()
     final_posts = [post for post in posts if post['id'] != post_id]
     save_data(final_posts)
 
 
 def update_post(post_id, title, author, content):
-    """Search for a post by ID and update title, author and content"""
+    """Update the details of an existing blog post."""
     posts = load_data()
     for post in posts:
         if post['id'] == post_id:

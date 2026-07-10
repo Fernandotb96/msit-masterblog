@@ -10,7 +10,7 @@
     <div class="form-container">
         <h1>Create a new post</h1>
 
-        <form action="/add" method="POST">
+        <form action="{{ url_for('add_post') }}" method="POST">
             <div class="form-group">
                 <label for="title">Title of the post:</label>
                 <input type="text" id="title" name="title" placeholder="Introduce a good title" required>

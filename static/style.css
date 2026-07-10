@@ -141,6 +141,8 @@ h1 {
     font-weight: bold;
     border-radius: 4px;
     transition: background-color 0.2s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-update {
