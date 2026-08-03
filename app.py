@@ -53,7 +53,7 @@ def update_post(post_id):
     return render_template('update.html', post=post)
 
 
-@app.route('/like/<int:post_id>')
+@app.route('/like/<int:post_id>', methods=['POST'])
 def like_post(post_id):
     storage.like_post(post_id)
     return redirect(url_for('index'))

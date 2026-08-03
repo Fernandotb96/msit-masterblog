@@ -7,13 +7,17 @@ def load_data():
         with open("data/blog_data.json", "r", encoding="utf-8") as handle:
             return json.load(handle)
     except (FileNotFoundError, json.JSONDecodeError):
+        save_data([])
         return []
 
 
 def save_data(data):
     """Save the provided list of blog posts to the JSON database file."""
-    with open("data/blog_data.json", "w", encoding="utf-8") as handle:
-        json.dump(data, handle)
+    try:
+        with open("data/blog_data.json", "w", encoding="utf-8") as handle:
+            json.dump(data, handle)
+    except OSError as error:
+        print(f"Error data can't be saved: {error}")
 
 
 def add_post(title, author, content):
